@@ -10,7 +10,8 @@ function calculateMinimunCycle(points: Point[]): number {
     if (points.length < 3 || points.length > 8) {
         throw new Error("Invalid input data")
     } else {
-        // your code here
+        //最小路径和
+    
     }
 }
 
