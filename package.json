@@ -1,0 +1,20 @@
+{
+  "name": "exam",
+  "version": "1.0.0",
+  "description": "测试题",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@gitee.com:linxiong-z/exam"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "ts-node": "^10.8.0",
+    "typescript": "^4.7.2"
+  }
+}
