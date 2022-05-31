@@ -1,5 +1,23 @@
-function quickSort(arr: number[]): number[] {
-    //input your code here
+function quickSort(arr: number[], start: number, end: number): number[] {
+    if (end - start < 1) {
+        return arr;
+    }
+    const target = arr[start];
+    let l = start;
+    let r = end;
+    while (l < r) {
+        while (l < r && arr[r] >= target) {
+        r--;
+        }
+        arr[l] = arr[r];
+        while (l < r && arr[l] < target) {
+        l++;
+        }
+        arr[r] = arr[l];
+    }
+    arr[l] = target;
+    quickSort(arr, start, l - 1);
+    quickSort(arr, l + 1, end);
     return arr
 }
 
@@ -34,7 +52,7 @@ function testQuickSort() {
         const randomStep = Math.ceil(Math.random() * 10)
         const arr = generateCases(i, randomStep)
         const start = Date.now()
-        const ret = quickSort(arr)
+        const ret = quickSort(arr, 0 ,arr.length - 1)
         const end = Date.now()
         console.log(`Quick sort for ${i} numbers costs ${end - start}ms`)
         if (!checkRes(ret, randomStep)){
